@@ -1,0 +1,10 @@
+{
+  "[jade]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ducfilan.pug-formatter"
+  },
+  "[pug]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ducfilan.pug-formatter"
+  }
+}
