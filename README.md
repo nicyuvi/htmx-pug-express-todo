@@ -7,6 +7,7 @@ a composable frontend experience using pug as the template engine.
 ```
 git clone
 cd htmx-pug-express-todo
+npm i 
 npm run dev
 ```
 
