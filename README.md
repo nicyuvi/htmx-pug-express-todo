@@ -10,6 +10,7 @@ cd htmx-pug-express-todo
 npm i 
 npm run dev
 ```
+visit http://localhost:3000/ to view app
 
 This project formats pug files with the vscode recommended extention
 
