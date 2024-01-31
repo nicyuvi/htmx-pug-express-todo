@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "db:studio": "npx prisma studio",
+    "db:push": "npx prisma generate && npx prisma db push"
   },
   "dependencies": {
+    "@prisma/client": "^5.9.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -16,6 +19,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
-    "prettier": "^3.2.4"
+    "prettier": "^3.2.4",
+    "prisma": "^5.9.0"
   }
 }
