@@ -5,12 +5,15 @@ html
     title= title
     link(rel='stylesheet' href='/stylesheets/style.css')
     script(src='https://cdn.tailwindcss.com')
-  body
-    nav(class="bg-gray-500 px-4 py-2 mb-4")
-      ul(class="flex")
-        li(class="mr-4")
-          a(href="/") Home
-        li
-          a(href="/about") About
-    main
+  body(class="flex flex-col h-screen")
+    header
+      nav(class="bg-gray-300 px-4 py-2 mb-4")
+        ul(class="flex")
+          li(class="mr-4")
+            a(href="/") Home
+          li
+            a(href="/about") About
+    main(class="flex-grow mb-4")
       block content
+    footer(class="bg-gray-300 px-4 py-2") 
+      p github link

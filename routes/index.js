@@ -10,13 +10,12 @@ const payload = {
 }
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-  // primsa queries
-  res.render('index', payload)
+  const todos = await db.todo.findMany()
+  res.render('index', { todos })
 })
 
 /* GET about page. */
 router.get('/about', async (req, res, next) => {
-  // primsa queries
   res.render('about')
 })
 

@@ -1,6 +1,11 @@
 extends layout
 block content
-  h1= title
-  p Welcome to #{ message }
-  div
-    +button({ buttonType: 'submit' }) Submit
+  div(class="flex justify-center")
+    div(class="border border-gray-500 w-1/2 p-2")
+      h1(class="text-xl mb-4") Todo List
+      if todos.length === 0 
+        p No todos currently.
+      else
+        ul
+          for todo in todos
+            li(class="border border-gray-500 p-2 mb-4") #{todo.content}
