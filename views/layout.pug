@@ -5,12 +5,13 @@ html
     title= title
     link(rel='stylesheet' href='/stylesheets/style.css')
     script(src='https://cdn.tailwindcss.com')
+    script(src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous")
   body(class="flex flex-col h-screen")
     header
       nav(class="bg-gray-300 px-4 py-2 mb-4")
         ul(class="flex")
           li(class="mr-4")
-            a(href="/") Home
+            a(href="/") Home 
           li
             a(href="/about") About
     main(class="flex-grow mb-4")
