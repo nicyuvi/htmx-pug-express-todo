@@ -1,6 +1,9 @@
-li(class="border border-gray-500 p-2 mb-4") #{todo.content}
+include ../mixins/list-item
+include ../mixins/input
 
-input(id="todo-input" hx-swap-oob="true" class="border border-gray-500 flex-grow mr-4 px-2 py-1" type='text' name='todo' value='')
++list-item(todo)
+
++input({})(id="todo-input" type='text' name='todo' value='' hx-swap-oob="true")
 
 p(id="no-items" hx-swap-oob="true")
 
