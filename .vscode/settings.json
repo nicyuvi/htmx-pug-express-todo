@@ -7,5 +7,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ducfilan.pug-formatter"
   },
-  "pugFormatter.tabSize": 2
+  "pugFormatter.tabSize": 2,
+  "pugFormatter.fillTab": "no"
 }
