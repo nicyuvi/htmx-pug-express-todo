@@ -1,2 +1,5 @@
+include ./button
 mixin list-item({content, id})
-  li(id=`todo-${id}` class="border border-gray-500 p-2 mb-4") #{content}
+  li(id=`todo-${id}` class="flex justify-between items-center border border-gray-500 p-2 mb-2") 
+    span #{content}
+    +button({buttonType: 'button'})(class="bg-red-400 hover:bg-red-500" hx-delete=`/delete-todo/${id}` hx-target="closest li" hx-swap="outerHTML") delete

@@ -25,4 +25,14 @@ router.post('/create-todo', async (req, res, next) => {
   res.render('partials/create-todo', { todo })
 })
 
+router.delete('/delete-todo/:todoId', async (req, res, next) => {
+  const todoId = req.params.todoId
+  await db.todo.delete({
+    where: {
+      id: Number(todoId),
+    },
+  })
+  res.send()
+})
+
 module.exports = router
