@@ -14,3 +14,6 @@ visit http://localhost:3000/ to view app
 
 This project formats pug files with the vscode recommended extention
 
+## Guideline
+### Mixins vs Includes
+Use mixins for bits of UI to be reusable (buttons) and includes for a chunk of UI to be rendered by server and swapped by htmx
