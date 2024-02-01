@@ -1,2 +1,2 @@
-mixin list-item({content})
-  li(class="border border-gray-500 p-2 mb-4") #{content}
+mixin list-item({content, id})
+  li(id=`todo-${id}` class="border border-gray-500 p-2 mb-4") #{content}
