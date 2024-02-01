@@ -16,13 +16,13 @@ router.get('/about', async (req, res, next) => {
   res.render('about')
 })
 
-router.post('/create', async (req, res, next) => {
+router.post('/create-todo', async (req, res, next) => {
   const todo = await db.todo.create({
     data: {
       content: req.body.todo,
     },
   })
-  res.render('partials/todo', { todo })
+  res.render('partials/create-todo', { todo })
 })
 
 module.exports = router
