@@ -22,9 +22,7 @@ router.post('/create', async (req, res, next) => {
       content: req.body.todo,
     },
   })
-  console.log('created todo', todo)
-  const { content } = todo
-  res.render('test', { content })
+  res.render('partials/todo', { todo })
 })
 
 module.exports = router
