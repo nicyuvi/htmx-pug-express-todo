@@ -6,9 +6,6 @@ block content
       form(class="mb-4 flex justify-between" hx-post="/create" hx-target="#response-div" hx-swap="beforeend") 
         input(class="border border-gray-500 flex-grow mr-4 px-2 py-1" type='text' name='todo' value='')
         +button({buttonType:'submit'}) Submit
-      if todos.length === 0 
-        p No todos currently.
-      else
-        ul(id="response-div")
-          for todo in todos
-            include ./partials/todo
+      ul(id="response-div")
+        for todo in todos
+          include ./partials/todo
