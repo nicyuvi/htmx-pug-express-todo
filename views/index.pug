@@ -4,10 +4,10 @@ block content
     div(id="table-and-form" class="border border-gray-500 w-1/2 p-2")
       h1(class="text-xl mb-4") Todo List
       form(class="mb-4 flex justify-between" hx-post="/create" hx-target="#response-div" hx-swap="beforeend") 
-        input(id="todo-input" class="border border-gray-500 flex-grow mr-4 px-2 py-1" type='text' name='todo' value='')
+        +input({})(id="todo-input" type='text' name='todo' value='')
         +button({buttonType:'submit'}) Submit
       if todos.length === 0
         p(id="no-items") No todos 
       ul(id="response-div")
         for todo in todos
-          li(class="border border-gray-500 p-2 mb-4") #{todo.content}
+          +list-item(todo)
