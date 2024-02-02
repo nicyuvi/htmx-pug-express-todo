@@ -32,7 +32,12 @@ router.delete('/delete-todo/:todoId', async (req, res, next) => {
       id: Number(todoId),
     },
   })
-  res.send()
+  const todos = await db.todo.findMany()
+  if (todos.length === 0) {
+    res.render('partials/delete-todo')
+  } else {
+    res.send()
+  }
 })
 
 module.exports = router

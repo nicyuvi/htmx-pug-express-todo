@@ -6,8 +6,9 @@ block content
       form(class="mb-4 flex justify-between" hx-post="/create-todo" hx-target="#response-div" hx-swap="beforeend") 
         +input({})(id="todo-input" type='text' name='todo' value='')
         +button({buttonType:'submit'}) Submit
-      if todos.length === 0
-        p(id="no-items") No todos 
+      div(id="no-items")  
+        if todos.length === 0
+          p No items
       ul(id="response-div")
         for todo in todos
           +list-item(todo)
