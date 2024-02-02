@@ -3,5 +3,5 @@ mixin list-item({content, id})
   li(id=`todo-${id}` class="flex justify-between items-center border border-gray-500 p-2 mb-2") 
     span #{content}
     div
-      +button({buttonType: 'button'})(class="bg-gray-500 hover:bg-gray-500 mr-4" hx-get=`/edit-todo/${id}` hx-target="closest li" hx-swap="outerHTML") edit
+      +button({buttonType: 'button'})(class="bg-gray-500 hover:bg-gray-500 mr-4" hx-get=`/edit-view/${id}` hx-target="closest li" hx-swap="outerHTML") edit
       +button({buttonType: 'button'})(class="bg-red-400 hover:bg-red-500" hx-delete=`/delete-todo/${id}` hx-target="closest li" hx-swap="outerHTML") delete
