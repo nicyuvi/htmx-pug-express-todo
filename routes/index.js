@@ -18,6 +18,10 @@ router.post('/create-todo', async (req, res, next) => {
   res.render('partials/create-todo', { todo })
 })
 
+/**
+ * Edit Feature
+ * todo: move feature routes to directory
+ */
 router.get('/edit-todo/:todoId', async (req, res, next) => {
   const todoId = Number(req.params.todoId)
   const todo = await db.todo.findUniqueOrThrow({
@@ -26,7 +30,17 @@ router.get('/edit-todo/:todoId', async (req, res, next) => {
     },
   })
   const defaultValue = todo.content
-  res.render('partials/edit-todo', { defaultValue })
+  res.render('partials/edit-todo', { defaultValue, todoId })
+})
+
+router.get('/edit-cancel/:todoId', async (req, res, next) => {
+  const todoId = Number(req.params.todoId)
+  const todo = await db.todo.findUniqueOrThrow({
+    where: {
+      id: todoId,
+    },
+  })
+  res.render('partials/edit-cancel', { todo })
 })
 
 router.delete('/delete-todo/:todoId', async (req, res, next) => {
