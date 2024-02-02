@@ -5,8 +5,8 @@ const db = new PrismaClient()
 
 router.get('/', async (req, res, next) => {
   const todos = await db.todo.findMany()
-  const active = { home: 'home' }
-  res.render('pages/index', { todos, active })
+  // const active = { home: 'home' }
+  res.render('pages/index', { todos })
 })
 
 router.post('/create-todo', async (req, res, next) => {
@@ -18,11 +18,22 @@ router.post('/create-todo', async (req, res, next) => {
   res.render('partials/create-todo', { todo })
 })
 
+router.get('/edit-todo/:todoId', async (req, res, next) => {
+  const todoId = Number(req.params.todoId)
+  const todo = await db.todo.findUniqueOrThrow({
+    where: {
+      id: todoId,
+    },
+  })
+  const defaultValue = todo.content
+  res.render('partials/edit-todo', { defaultValue })
+})
+
 router.delete('/delete-todo/:todoId', async (req, res, next) => {
-  const todoId = req.params.todoId
+  const todoId = Number(req.params.todoId)
   await db.todo.delete({
     where: {
-      id: Number(todoId),
+      id: todoId,
     },
   })
   const todos = await db.todo.findMany()

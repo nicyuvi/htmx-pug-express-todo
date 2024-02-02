@@ -1,0 +1,7 @@
+include ../mixins/input
+include ../mixins/button
+form(class="flex justify-between mb-4")
+  +input({})(id="todo-input" type='text' name='todo' value=defaultValue)
+  div
+    +button({buttonType: 'button'})(class="bg-gray-500 hover:bg-gray-500 mr-4") cancel
+    +button({buttonType: 'submit'})(class="bg-gray-500 hover:bg-gray-500") submit
