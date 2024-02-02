@@ -3,17 +3,10 @@ var router = express.Router()
 const { PrismaClient } = require('@prisma/client')
 const db = new PrismaClient()
 
-/* GET home page. */
 router.get('/', async (req, res, next) => {
   const todos = await db.todo.findMany()
   // const active = { home: 'home' }
-  res.render('index', { todos })
-})
-
-/* GET about page. */
-router.get('/about', async (req, res, next) => {
-  // const active = { about: 'about' }
-  res.render('about')
+  res.render('pages/index', { todos })
 })
 
 router.post('/create-todo', async (req, res, next) => {
