@@ -6,7 +6,12 @@
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
     "db:studio": "npx prisma studio",
-    "db:push": "npx prisma generate && npx prisma db push"
+    "db:push": "npx prisma generate && npx prisma db push",
+    "format": "prettier . --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,css,md,json}": "prettier --cache --write"
   },
   "dependencies": {
     "@prisma/client": "^5.9.1",
@@ -19,6 +24,8 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
     "prettier": "^3.2.4",
     "prisma": "^5.9.1"
   }
