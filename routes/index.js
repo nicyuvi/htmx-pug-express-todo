@@ -5,8 +5,8 @@ const db = new PrismaClient()
 
 router.get('/', async (req, res, next) => {
   const todos = await db.todo.findMany()
-  // const active = { home: 'home' }
-  res.render('pages/index', { todos })
+  const active = { home: 'home' }
+  res.render('pages/index', { todos, active })
 })
 
 router.post('/create-todo', async (req, res, next) => {
