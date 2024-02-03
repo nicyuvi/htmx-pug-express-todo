@@ -6,6 +6,7 @@ html
     link(rel='stylesheet' href='/stylesheets/style.css')
     script(src='https://cdn.tailwindcss.com')
     script(src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous")
+    script(src="https://kit.fontawesome.com/2621f4144f.js" crossorigin="anonymous")
   body(class="flex flex-col h-screen")
     header
       nav(class="bg-gray-300 px-4 py-2 mb-4")
@@ -17,4 +18,11 @@ html
     main(class="flex-grow mb-4")
       block content
     footer(class="bg-gray-300 px-4 py-2") 
-      p github link
+      a(href='https://github.com/nicyuvi' target="_blank" title="github")
+        i(class="fab fa-github text-base mr-4 text-gray-700") 
+      a(href='https://www.linkedin.com/in/nicyuvi' target="_blank" title="linkedin")
+        i(class="fab fa-linkedin-in text-base mr-4 text-gray-700") 
+      a(href='https://codepen.io/nicyuvi/pens' target="_blank" title="codepen")
+        i(class="fab fa-codepen text-base mr-4 text-gray-700") 
+      a(href='https://twitter.com/nicyuvi' target="_blank" title="twitter")
+        i(class="fab fa-twitter text-base text-gray-700") 

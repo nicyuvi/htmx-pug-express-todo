@@ -18,10 +18,6 @@ router.post('/create-todo', async (req, res, next) => {
   res.render('partials/create-todo', { todo })
 })
 
-/**
- * Edit Feature
- * todo: move feature routes to directory
- */
 router.get('/edit-view/:todoId', async (req, res, next) => {
   const todoId = Number(req.params.todoId)
   const todo = await db.todo.findUniqueOrThrow({
