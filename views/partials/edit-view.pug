@@ -1,0 +1,7 @@
+include ../mixins/input
+include ../mixins/button
+form(class="flex justify-between mb-4" hx-put=`/edit-todo/${todoId}` hx-target="this" hx-swap="outerHTML")
+  +input({})(id="todo-edit-input" type='text' name='todo-edit' value=defaultValue)
+  div
+    +button({buttonType: 'button'})(class="bg-gray-500 hover:bg-gray-500 mr-4" hx-get=`/edit-cancel/${todoId}` hx-target="closest form" hx-swap="outerHTML") cancel
+    +button({buttonType: 'submit'})(class="bg-gray-500 hover:bg-gray-500") submit

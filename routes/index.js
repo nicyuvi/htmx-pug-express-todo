@@ -30,7 +30,7 @@ router.get('/edit-view/:todoId', async (req, res, next) => {
     },
   })
   const defaultValue = todo.content
-  res.render('partials/edit-todo', { defaultValue, todoId })
+  res.render('partials/edit-view', { defaultValue, todoId })
 })
 
 router.get('/edit-cancel/:todoId', async (req, res, next) => {
@@ -40,7 +40,21 @@ router.get('/edit-cancel/:todoId', async (req, res, next) => {
       id: todoId,
     },
   })
-  res.render('partials/edit-cancel', { todo })
+  res.render('partials/edit-todo', { todo })
+})
+
+router.put('/edit-todo/:todoId', async (req, res, next) => {
+  const todoId = Number(req.params.todoId)
+  const contentUpdate = req.body['todo-edit']
+  const todo = await db.todo.update({
+    where: {
+      id: todoId,
+    },
+    data: {
+      content: contentUpdate,
+    },
+  })
+  res.render('partials/edit-todo', { todo })
 })
 
 router.delete('/delete-todo/:todoId', async (req, res, next) => {
